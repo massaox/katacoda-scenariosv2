@@ -1,0 +1,18 @@
+{
+  "title": "Kubernetes in Practice Day 2",
+  "description": "Introduction to Kubernetes concepts",
+  "private": "true",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "course_id": "test",
+      "title": "Exploring a microservice solution",
+      "description": "an example of a microservice solution"
+    },
+    {
+      "course_id": "hpa",
+      "title": "Horizontal Pod Autoscaler",
+      "description": "Scaling your app horizontally with HPA"
+    }
+  ]
+}
