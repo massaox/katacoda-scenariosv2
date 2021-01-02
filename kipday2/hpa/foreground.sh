@@ -1,2 +1,1 @@
-#!/bin/bash
-echo "" 
+./root/setup/startingk8s.sh

@@ -44,6 +44,5 @@
     "uilayout": "terminal-terminal"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running"
-  }
+    "imageid": "kubernetes-cluku 
 }

@@ -39,6 +39,11 @@
         {
           "file": "metrics-server_0.4.1.yaml",
           "target": "/root/setup"
+        },
+        {
+          "file": "startingk8s.sh",
+          "target": "/root/setup",
+          "chmod": "+x"
         }
       ]
     }
