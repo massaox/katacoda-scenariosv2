@@ -1,1 +1,1 @@
-testing intro
+Welcome to the HPA workshop. This time we will deploy the metrics-server and make sure it is correctly registered with kube-api then we will deploy a sample application to test if the HorizontalPodautoscaler can automatically scale up our application based on CPU usage.
