@@ -22,7 +22,7 @@ You can should see a "metrics-server-<HASH>" being deployed at the kube-system n
 
 You will notice that even though the STATUS shows the Pod as running the READY section will show 0/1. Check the logs from the metrics-server pod with the "logs" option:
 
-kubect -n kube-system logs <METRICS-SERVER-POD>
+kubectl -n kube-system logs METRICS-SERVER-POD
 
 You will see a error message about the metric-server not being able to to verify the certificate provided by the Kubelet, that is because how Kubernetes was setup on this environment. Since we are only testing we can add the an option to skip the TLS verification. If you see the Github repo under the "Configuration" section we need to add the option "--kubelet-insecure-tls" to our deployment manifests.
 
@@ -55,3 +55,5 @@ Just add the option on the bottom like so:
 ```
 
 Close the file by hitting the ESC key, followed by colon key ":" and the letters "qw". The changes should apply automatically once the file is closed.
+
+A new metrics-server pod will be created. If everything was done correct the READY column should show 1/1. If so move to the next step.
