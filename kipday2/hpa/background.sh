@@ -5,4 +5,3 @@ do
   sleep 1
 done
  
-kubectl apply -f /root/setup/metrics-server_0.4.1.yaml
