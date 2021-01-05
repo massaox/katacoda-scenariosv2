@@ -16,16 +16,28 @@ The idea is to run the command on "dry-run" mode and output the content to a yam
 
 We will use a busybox image version 1.33.0 for our test, we need to pass a command to our image to make sure it stays running otherwise it will crash on startup. For that we can use the sleep. The command below should be enough to get us started:
 
-`kubectl create deployment hpa-test --image=busybox:1.33.0 --dry-run=client -o yaml  -- /bin/sh -c "sleep 6000" > /root/deployment.yaml`{{ execute HOST1 }}
+`kubectl create deployment hpa-test --image=busybox:1.33.0 --dry-run=client -o yaml  > /root/deployment.yaml`{{ execute HOST1 }}
 
-What we just did was create a yaml deployment manifests of the name "hpa-test" using the image busybox version 1.33.0 with will execute the sleep command for 6000 seconds before termination. The manifest was sent to the file deployment.yaml.
+What we just did was create a yaml deployment manifests on the location "/root/deployment.yaml" of the name "hpa-test" using the image busybox version 1.33.0.
 
-We are not done with a manifest, we still need to fill out the "resources" part, in order to scale based on CPU usage, HPA needs to know how much the Pod requires which is done so by adding the CPU request on the Pod template.
+We are not done with a manifest yet, we still need to fill out the "resources" part, in order to scale based on CPU usage, HPA needs to know how much the Pod requires which is done so by adding the CPU request on the Pod template and also pass the sleep command for the Pod to execute.
 
 You can use the explain command if you need assistance filling out the CPU request, make sure the CPU request is set to "50m".
 
 `kubectl explain pod.spec.containers.resources`{{ execute HOST1 }}
 
+For the sleep command you can add all parameters in a single line using the square brackets, the command below should be added in line with all the "containers" options like name,image and resources:
+
+```
+command: ["/bin/sh", "-c", "sleep 6000"]
+```
+
 Once once done you can apply the manifest:
 
 `kubectl apply -f /root/deployment.yaml`{{ execute HOST1 }}
+
+Wait a few seconds and you should a "hpa-test" pod running:
+
+`kubectl get pods`{{ execute HOST1 }}
+
+If it is not running try checking the logs or running a describe on the pod. Otherwise move to the next step.
