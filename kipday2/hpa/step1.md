@@ -2,11 +2,11 @@ Click on the script below to start the Kubernetes Cluster
 
 `launch.sh`{{ execute HOST1 }}
 
-Our Kubernetes cluster should be up and running in a few seconds or a couple of minutes at worse.
+Our Kubernetes cluster should be up and running in a few seconds or a couple of minutes at worse. You can see all Pods in the kube-system namespace being initialized, just wait for all of them to be at the "Running" STATUS before proceeding:
 
-If you list all the pods running in the kube-system namespace you will see that metrics-server is not deployed yet
+`watch kubectl -n kube-system get pods`{{ execute HOST1 }}
 
-`kubectl get pods -n kube-system`{{ execute HOST1 }}
+You will see that metrics-server is not deployed yet as it does not come by default with our Kubernetes cluster.
 
 The metrics-server can be found on the following Github repository:
 
@@ -56,4 +56,4 @@ Just add the option on the bottom like so:
 
 Close the file by hitting the ESC key, followed by colon key ":" and the letters "qw". The changes should apply automatically once the file is closed.
 
-A new metrics-server pod will be created. If everything was done correct the READY column should show 1/1. If so move to the next step.
+A new metrics-server pod will be created and the first one will be terminated. If everything was done correct the READY column should show 1/1. If so move to the next step.
