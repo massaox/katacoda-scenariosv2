@@ -16,9 +16,9 @@ The idea is to run the command on "dry-run" mode and output the content to a yam
 
 We will use a busybox image version 1.33.0 for our test, we need to pass a command to our image to make sure it stays running otherwise it will crash on startup. For that we can use the sleep. The command below should be enough to get us started:
 
-`kubectl create deployment hpa-test --image=busybox:1.33.0 --dry-run=client -o yaml  > /root/deployment.yaml`{{ execute HOST1 }}
+`kubectl create deployment hpa-test --image=busybox:1.33.0 --dry-run=client -o yaml  > /root/manifests/deployment.yaml`{{ execute HOST1 }}
 
-What we just did was create a yaml deployment manifests on the location "/root/deployment.yaml" of the name "hpa-test" using the image busybox version 1.33.0.
+What we just did was create a yaml deployment manifests on the location "/root/manifests/deployment.yaml" of the name "hpa-test" using the image busybox version 1.33.0.
 
 We are not done with a manifest yet, we still need to fill out the "resources" part, in order to scale based on CPU usage, HPA needs to know how much the Pod requires which is done so by adding the CPU request on the Pod template and also pass the sleep command for the Pod to execute.
 
@@ -34,7 +34,7 @@ command: ["/bin/sh", "-c", "sleep 6000"]
 
 Once once done you can apply the manifest:
 
-`kubectl apply -f /root/deployment.yaml`{{ execute HOST1 }}
+`kubectl apply -f /root/manifests/deployment.yaml`{{ execute HOST1 }}
 
 Wait a few seconds and you should a "hpa-test" pod running:
 
