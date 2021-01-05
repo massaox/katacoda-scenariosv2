@@ -1,0 +1,1 @@
+Well done. You have just learned how your application can scale up and down with minimum supervision by using the HorizontalPodAutoscaler built-in in Kubernetes. By using a monitoring add-on such as Prometheus you can scale your application on different types of metrics, not only CPU and RAM.

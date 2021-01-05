@@ -20,10 +20,6 @@
       {
         "title": "Step 4",
         "text": "step4.md"
-      },
-      {
-        "title": "Step 5",
-        "text": "step5.md"
       }
     ],
     "intro": {
@@ -37,6 +33,14 @@
       "host01": [
         {
           "file": "metrics-server_0.4.1.yaml",
+          "target": "/root/setup"
+        },
+        {
+          "file": "deployment.yaml",
+          "target": "/root/setup"
+        },
+        {
+          "file": "hpa-test.yaml",
           "target": "/root/setup"
         }
       ]

@@ -15,7 +15,7 @@ This time I will let you write the command. You can use the example section in t
 
 Once the manifest is created, let's apply it:
 
-`kubectl apply -f /root/manifests/hpa-test.yaml'{{ execute HOST1 }}
+`kubectl apply -f /root/manifests/hpa-test.yaml`{{ execute HOST1 }}
 
 After a couple of seconds our new HPA object should report some information:
 
