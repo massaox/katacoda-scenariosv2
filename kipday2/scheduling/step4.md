@@ -4,11 +4,13 @@ There are a few Pods running on the cluster now, take a quick look at them:
 
 The "-o wide" flag gives you more information which includes the node the Pods are running on.
 
->> Based on the pods running what will happens if we apply the following taint to "node01"? <<
+Given the taint below:
 
 Key=special
 Value=true
 Effect=NoExecute
+
+>> Based on the pods running what will happens if we apply the above taint to "node01"? <<
 
 ( ) All Pods will be evicted
 ( ) No Pods will be evicted

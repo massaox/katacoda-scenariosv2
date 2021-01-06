@@ -1,0 +1,1 @@
+Because the toleration on the manifests did not specify any key, value or effect it sort of acts as a wildcard so the Pod would tolerate any taints on any nodes.
