@@ -1,0 +1,1 @@
+Welcome back. In this workshop we will get into the mindset of the kube-scheduler and try to think like it. You will be presented a few different manifests and you will need to figure it out in which node the pod will end up being scheduled taking into account any taints, tolerations, pod and node affinity and anti-affinity rules.
