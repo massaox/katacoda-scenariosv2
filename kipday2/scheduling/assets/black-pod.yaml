@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: black
+  labels:
+    color: black
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+       - topologyKey: kubernetes.io/hostname
+         labelSelector:
+           matchExpressions:
+           - key: color
+             operator: In
+             values:
+             - gray
+  containers:
+  - name: black
+    image: raftx/sample-web:v1

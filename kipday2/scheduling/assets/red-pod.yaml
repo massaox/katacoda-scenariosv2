@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: red
+  labels:
+    color: red
+spec:
+  containers:
+  - name: red
+    image: raftx/sample-web:v1
+  tolerations:
+  - key: "special"
+    operator: "Equal"
+    value: "true"
+    effect: "NoExecute"

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: orange
+  labels:
+    color: orange
+spec:
+  containers:
+  - name: orange
+    image: raftx/sample-web:v1
+  tolerations:
+  - operator: "Exists"

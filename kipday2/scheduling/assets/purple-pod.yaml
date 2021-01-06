@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: purple
+  labels:
+    color: purple
+spec:
+  containers:
+  - name: purple
+    image: raftx/sample-web:v1
+  tolerations:
+  - key: "special"
+    operator: "Exists"
+    effect: "NoExecute"
