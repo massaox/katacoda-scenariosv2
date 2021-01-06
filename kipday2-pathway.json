@@ -8,6 +8,11 @@
       "course_id": "hpa",
       "title": "Horizontal Pod Autoscaler",
       "description": "Scaling your app horizontally with HPA"
+    },
+    {
+      "course_id": "scheduling",
+      "title": "kube-scheduler part 2",
+      "description": "Making scheduling decisions with taint, toleration and affinity."
     }
   ]
 }
