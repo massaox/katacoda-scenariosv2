@@ -6,7 +6,7 @@ Our Kubernetes cluster should be up and running in a few seconds or a couple of 
 
 `watch kubectl -n kube-system get pods`{{ execute HOST1 }}
 
-Have a look at the manifest below than answer the question:
+Have a look at the manifest below then answer the question:
 
 ```yaml
 apiVersion: v1
@@ -27,7 +27,7 @@ spec:
 
 >> In which node would say the Pod can be scheduled on? <<
 
-( ) The "controplane"  only
+( ) The "controlplane"  only
 ( ) The "node01" only
 (*) Both
 ( ) None of them

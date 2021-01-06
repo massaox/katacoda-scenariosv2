@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: green
+  name: green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      color: green
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        color: green
+    spec:
+      containers:
+      - image: raftx/sample-web:v1
+        name: green

@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
   - name: green
-    image: busybox:1.33.0
+    image: raftx/sample-web:v1 

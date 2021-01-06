@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: blue
+  name: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      color: blue
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        color: blue
+    spec:
+      containers:
+      - image: raftx/sample-web:v1
+        name: blue
+      tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
+        effect: "NoSchedule"

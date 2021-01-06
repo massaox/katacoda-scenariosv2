@@ -1,0 +1,3 @@
+Only the red Pod remained since the NoExecute effect has the power to evict any Pods from the node that it does not have the correct toleration as soon as the taint is applied. This is a powerful option heavily utilized by Kubernetes internal when perform action such as Node updates.
+
+Time for the next question. Take a look again at the cluster, the scenario is very similar to the previous step but with one major difference, let's see if you can spot it.
