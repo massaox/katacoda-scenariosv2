@@ -3,6 +3,7 @@
   "description": "microservices",
   "difficulty": "Beginner",
   "time": "30",
+  "private": "true",
   "details": {
     "assets": {
       "host01": [
